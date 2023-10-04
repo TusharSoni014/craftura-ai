@@ -1,0 +1,91 @@
+.image-preview-container {
+  height: 100% !important;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  z-index: 99;
+  .image-preview-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .loading-container {
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .generated-img-container {
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      position: relative;
+      .private-mode-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: grey;
+        font-weight: 700;
+        user-select: none;
+      }
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .generated-img-button-section {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        .img-download-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #59b259;
+          box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+          transition-duration: 0.25s;
+          &:hover{
+            background-color: lighten($color: #59b259, $amount: 10);
+          }
+        }
+      }
+    }
+  }
+  .fade-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    &.active {
+      opacity: 1;
+    }
+    .prompt-highlight-text {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, black, transparent);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      color: white;
+    }
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../../../colors.scss";
+
+.profile-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .profile-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    .avatar-logo{
+      cursor: pointer;
+    }
+    .user-info{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+  .close-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white !important;
+    margin-left: auto;
+    .close-icon {
+      color: white !important;
+      font-size: 25px;
+    }
+  }
+}

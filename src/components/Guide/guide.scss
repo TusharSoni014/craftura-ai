@@ -1,0 +1,24 @@
+.guide-page-container {
+  padding: 100px 20px 40px 20px;
+  background-color: #FAFAFC;
+  color: black;
+  min-height: 100vh;
+  h1{
+    margin: 15px 0;
+    color: dodgerblue;
+  }
+  h2,h3{
+    margin: 10px 0;
+  }
+  h4{
+    margin: 5px 0;
+  }
+  ul{
+    margin: 0 0 0 20px;
+    li{
+      &.item{
+        margin: 10px 0;
+      }
+    }
+  }
+}

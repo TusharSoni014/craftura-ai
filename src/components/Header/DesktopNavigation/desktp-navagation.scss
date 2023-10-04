@@ -1,0 +1,61 @@
+@import "../../../colors.scss";
+
+.desktop-navigation-container {
+  padding: 0 20px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .navigation-btn {
+      width: fit-content !important;
+      padding: 0 15px;
+      height: 70px !important;
+      border-radius: 0;
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      &.active {
+        color: $colorPrimary !important;
+      }
+    }
+  }
+}
+
+.profile-drawer {
+  color: white;
+  box-shadow: none !important;
+  background-color:rgba($color: #ECECF1, $alpha: 0.8) !important;
+  backdrop-filter: blur(10px);
+  height: calc(100vh - 70px) !important;
+  top: 70px !important;
+  position: relative;
+  .ant-drawer-body {
+    padding: 0 !important;
+  }
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    .empty {
+      background-color: rgba($color: red, $alpha: 0.2) !important;
+    }
+    .drawer-menu-btn {
+      border-radius: 0;
+      width: 100%;
+      border: none !important;
+      padding: 15px;
+      height: fit-content;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 5px;
+      .icon {
+        font-size: 22px;
+      }
+    }
+  }
+}

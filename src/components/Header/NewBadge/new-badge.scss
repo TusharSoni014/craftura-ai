@@ -1,0 +1,23 @@
+@import "../../../colors.scss";
+
+.new-badge-container {
+  font-size: 11px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: $proColorAccent;
+  color: black;
+  box-shadow: 0 0 10px rgba($color: $proColorAccent, $alpha: 0.5);
+  animation: bubble 1s linear infinite;
+}
+
+@keyframes bubble {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.95;
+  }
+  100% {
+    scale: 1;
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../../colors.scss";
+
+.navigation-container {
+  padding: 0 20px;
+  .menu-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.7rem;
+  }
+}
+
+.drawer-container {
+  background-color: rgba($color: #FAFAFC, $alpha: 0.8) !important;
+  backdrop-filter: blur(15px);
+  .ant-drawer-body {
+    padding: 0 !important;
+  }
+  .drawer-menu-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px) !important;
+    .drawer-menu-btn {
+      padding: 10px;
+      border-radius: 0;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+.navigation-footer-links-container {
+  color: white;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}

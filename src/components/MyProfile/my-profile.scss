@@ -1,0 +1,97 @@
+@import "../../colors.scss";
+
+.my-profile-page-container {
+  padding: 70px 0 0 0;
+  background-color: #FAFAFC;
+  color: black;
+  width: 100%;
+  min-height: 100vh;
+  .profile-header-container {
+    width: 100%;
+    height: 250px;
+    background-color: #FAFAFC;
+    display: flex;
+    padding: 10px;
+    background: linear-gradient(to bottom, rgba($colorPrimary, 0.5), transparent);
+    .profile-right {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      .edit-mode-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba($color: black, $alpha: 0.1);
+        border-radius: 10px;
+        gap: 10px;
+        margin: 0 0 10px 0;
+      }
+      .username {
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .posts-count {
+        padding: 5px 15px;
+        border-radius: 10px;
+        margin: 0 0 5px 0;
+        background-color: rgba($color: white, $alpha: 0.1);
+      }
+    }
+    .profile-left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 10px 0 0;
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: white;
+      }
+    }
+  }
+  .profile-posts-container {
+    border: 1px solid transparent;
+    width: 100%;
+    .posts-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px;
+      padding: 0 10px;
+      margin: 0 0 15px 0;
+    }
+    .load-more-btn-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .my-profile-page-container {
+    .profile-header-container {
+      .profile-right {
+        .username {
+          font-size: 20px;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          word-break: break-word;
+        }
+        .edit-mode-container {
+          font-size: 12px;
+        }
+      }
+      .profile-left {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+}

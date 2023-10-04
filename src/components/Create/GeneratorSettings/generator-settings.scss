@@ -1,0 +1,48 @@
+.settings-modal {
+  background-color: transparent;
+  width: fit-content !important;
+  max-width: 500px;
+  margin: 10px;
+  max-height: 90vh;
+  overflow-y: auto;
+  .settings-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .prompt-container{
+      .prompt-btn-container{
+        display: flex;
+        margin: 5px 0 0 0;
+        gap: 5px;
+        .random-prompt-btn{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .amount-selection-selector{
+      display: flex;
+      flex-direction: column;
+    }
+    .negprompt-textarea,
+    .prompt-textarea {
+      color: black;
+      resize: none;
+    }
+    .prev-gen-settings-container{
+      .prevgen-settings{
+        background-color: rgba($color: black, $alpha: 0.1);
+        border-radius: 5px;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+      }
+    }
+    .ant-modal-content {
+      width: fit-content;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.signon-success-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-content: center !important;
+  width: 100%;
+  height: 100vh !important;
+  position: relative;
+  background-color: #FAFAFC;
+  color: white;
+  p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    .loader-icon{
+      font-size: 25px;
+    }
+  }
+}

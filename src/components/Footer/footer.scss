@@ -1,0 +1,54 @@
+@import "../../colors.scss";
+
+.footer {
+  padding: 20px 30px;
+  background: #ECECF1;
+  color: black;
+  .title {
+    margin: 10px 0;
+    h2 {
+      margin: 0;
+    }
+    small {
+      color: grey;
+    }
+  }
+  .social-links {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 25px;
+    .icon {
+      transition-duration: 0.25s;
+      &.github {
+        color: black;
+      }
+      &.linkedin {
+        color: #0077b5;
+      }
+      &.gmail {
+        color: #c11510;
+      }
+      &.youtube {
+        color: #ff0000;
+      }
+      &:hover {
+        scale: 1.1;
+        cursor: pointer;
+      }
+    }
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px 10px;
+    flex-wrap: wrap;
+    margin: 50px 0 0 0;
+    a {
+      width: fit-content;
+      text-decoration: none;
+      font-size: 13px;
+    }
+  }
+}

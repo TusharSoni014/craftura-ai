@@ -1,0 +1,26 @@
+.previous-image-mobile-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 20px 0;
+  width: 100%;
+  img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .img-preview-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: rgba($color: black, $alpha: 0.2);
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    width: calc(100vw - 40px);
+  }
+}

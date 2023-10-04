@@ -1,0 +1,19 @@
+.notfound-container{
+  background-color: #FAFAFC;
+  height: 100vh;
+  padding: 70px 0 0 0 ;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img{
+    height: 200px;
+  }
+  p{
+    font-weight: 700;
+    color: rgba($color: #ffffff, $alpha: 0.8);
+    text-align: center;
+    padding: 10px;
+  }
+}

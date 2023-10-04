@@ -1,0 +1,19 @@
+.terms-of-service-container{
+  padding: 100px 30px;
+  background-color: #FAFAFC;
+  color: black;
+  h1{
+    color: dodgerblue;
+  }
+  h2{
+    margin: 15px 0 5px 0;
+  }
+  .flex{
+    display: flex;
+    gap: 10px;
+    margin: 5px 0;
+  }
+  h4{
+    margin: 10px 0 5px 0;
+  }
+}

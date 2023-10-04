@@ -1,0 +1,55 @@
+@import "../../../colors.scss";
+
+.post-item {
+  border-radius: 10px;
+  position: relative;
+  background-color: rgba($color: white, $alpha: 0.1);
+  img {
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+  }
+  .post-btn-container {
+    display: flex;
+    .post-download-btn,
+    .post-info-btn,
+    .post-delete-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      width: fit-content;
+      padding: 5px 15px;
+      height: fit-content;
+      width: 100%;
+      border-radius: 0;
+    }
+    .post-download-btn {
+      background-color: rgba($color: $successGreen, $alpha: 0.5);
+      transition-duration: 0.25s;
+      &:hover {
+        background-color: lighten($color: $successGreen, $amount: 0);
+      }
+    }
+    .post-delete-btn {
+      background-color: rgba($color: $color3, $alpha: 0.5);
+      transition-duration: 0.25s;
+      &:hover {
+        background-color: lighten($color: $color3, $amount: 0);
+      }
+    }
+  }
+}
+
+.delete-post-modal {
+  small {
+    color: red;
+  }
+  .delete-post-btn {
+    background-color: $failRed;
+    transition-duration: 0.25s;
+    &:hover {
+      background-color: lighten($color: $failRed, $amount: 10) !important;
+    }
+  }
+}

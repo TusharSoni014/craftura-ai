@@ -1,0 +1,257 @@
+@import "../../colors.scss";
+
+.create-page-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 70px 0 0 0;
+  background-color: #FAFAFC;
+  color: black;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba($color: $colorPrimary, $alpha: 0.4);
+    filter: blur(50px);
+    left: -50px;
+    top: -50px;
+    user-select: none;
+    pointer-events: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba($color: $colorPrimary, $alpha: 0.4);
+    filter: blur(50px);
+    right: -50px;
+    bottom: -50px;
+  }
+  .create-main-container {
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    display: flex;
+    .prompt-container-left {
+      width: 60%;
+      height: 100%;
+      padding: 40px 0;
+      flex-wrap: nowrap;
+      h1 {
+        font-size: 50px !important;
+      }
+      .intro-text {
+        font-weight: 700;
+        color: grey;
+        margin: 10px 0;
+      }
+      .prompt-form {
+        margin: 20px;
+        margin-left: 0;
+        background-color: white;
+        height: 50px;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.15);
+        input {
+          width: 70%;
+          border: none;
+          outline: none;
+          padding: 10px;
+        }
+        .btn-container {
+          width: 30%;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          gap: 10px;
+          .setting-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            transition-duration: 0.25s;
+            &:hover {
+              rotate: 60deg;
+            }
+            &.disabled {
+              pointer-events: none;
+              opacity: 50%;
+            }
+          }
+          .get-prompt {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            cursor: pointer;
+            transition-duration: 0.25s !important;
+            &.disabled{
+              color: grey;
+              user-select: none;
+              pointer-events: none;
+            }
+            &:hover {
+              scale: 1.1;
+              filter: drop-shadow(0 0 10px rgb(255, 215, 0));
+            }
+          }
+          .generate-btn {
+            width: 100%;
+            padding: 5px;
+            height: 100%;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            background-color: $colorPrimary;
+            transition-duration: 0.25s;
+            &:hover {
+              scale: 0.95;
+              background-color: darken($color: $colorPrimary, $amount: 10);
+            }
+            &.disabled {
+              pointer-events: none;
+              opacity: 80%;
+            }
+            .btn-loader {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 5px;
+            }
+          }
+        }
+      }
+    }
+    .output-preview-container {
+      height: 100%;
+      width: 40%;
+      padding: 15px;
+    }
+  }
+}
+
+.login-modal,
+.settings-modal {
+  background-color: transparent;
+  width: fit-content !important;
+  max-width: 500px;
+  margin: 10px;
+  .settings-modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .negprompt-textarea {
+      color: lightgray;
+      resize: none;
+    }
+    .ant-modal-content {
+      width: fit-content;
+    }
+  }
+}
+.membership-modal {
+  .membership-modal-inner-container {
+    text-align: center;
+    p {
+      color: grey;
+      span {
+        color: white;
+      }
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 15px 0 0 0;
+      .membership-upgrade-btn {
+        background-color: #ffb02e;
+        color: black;
+        font-weight: 600;
+        &:hover {
+          box-shadow: 0 0 10px rgba($color: #ffb02e, $alpha: 1);
+        }
+      }
+    }
+  }
+}
+
+.multi-post-drawer {
+  background-color: rgba($color: #FAFAFC, $alpha: 0.8) !important;
+  backdrop-filter: blur(10px);
+  color: white;
+  .ant-drawer-body {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .multi-post-item {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .create-page-container {
+    height: fit-content;
+    overflow-y: auto;
+    &::before {
+      display: none;
+    }
+    &::after {
+      display: none;
+    }
+    .create-main-container {
+      flex-direction: column;
+      justify-content: flex-start;
+      .prompt-container-left {
+        width: 100%;
+        padding: 0;
+        height: fit-content;
+        .prompt-form {
+          margin: 20px 0;
+          input {
+            width: 57%;
+          }
+          .btn-container {
+            width: 43%;
+          }
+        }
+      }
+      .output-preview-container {
+        width: 100%;
+        max-height: 400px;
+        padding: 0;
+        margin: 0 0 15px 0;
+        min-height: 400px;
+      }
+    }
+  }
+}
