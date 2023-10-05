@@ -36,6 +36,9 @@ export default function Footer() {
         <Link to="/contact">Contact Us</Link>
         <Link to="/guide">Guide</Link>
       </div>
+      <div className="footer-info">
+        <small>This tool is made by Tushar Soni | © {new Date().getFullYear()}</small>
+      </div>
     </div>
   );
 }

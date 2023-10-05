@@ -72,13 +72,15 @@ export default function DesktopNavigation() {
             type="text"
           >
             Create
-            <NewBadge/>
+            <NewBadge />
           </Button>
         </div>
         {isLoggedIn ? (
           <>
             <Avatar
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+              }}
               className="avatar-logo"
               size={45}
               onClick={() => setOpen((state) => !state)}

@@ -9,6 +9,7 @@ import { fetchUserDetails, updateUsername } from "../../redux/slices/appSlice";
 import { errorMessageHandler } from "../utils/utilFunctions";
 import axiosClient from "../utils/axiosClient";
 import { toggleSignonModalOpen } from "../../redux/slices/utilSlice";
+import Footer from "../Footer/Footer";
 
 export default function Settings() {
   const isLoggedIn = useSelector((state) => state.appSlice.isLoggedIn);
@@ -199,6 +200,7 @@ export default function Settings() {
           </Button>
         </div>
       </Modal>
+      <Footer/>
     </>
   );
 }

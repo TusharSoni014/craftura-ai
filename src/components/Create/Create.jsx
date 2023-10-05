@@ -13,7 +13,7 @@ import {
 } from "../../redux/slices/imageGenerateSlice";
 import PreviousImages from "./PreviousImages/PreviousImages";
 import { Button, Drawer, Modal, Tour } from "antd";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   fetchUserDetails,
   updateHelperTourState,
@@ -42,18 +42,12 @@ export default function Create() {
   const isLoading = useSelector((state) => state.imageGenerateSlice.isLoading);
   const seed = useSelector((state) => state.settingsSlice.seed);
   const negPrompt = useSelector((state) => state.settingsSlice.negPrompt);
-  const privateMode = useSelector((state) => state.settingsSlice.privateMode);
   const amount = useSelector((state) => state.settingsSlice.amount);
-  const user = useSelector((state) => state.appSlice.currentUser);
   const multiPosts = useSelector((state) => state.multiPostCreateSlice.posts);
   const inputPromptRef = useRef(null);
-  const navigate = useNavigate();
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
-  const [isMembershipModalOpen, setIsMembershipModalOpen] = useState(false);
   const [pageWidth, setPageWidth] = useState(window.innerWidth);
   const [drawerOpen, setDrawerOpen] = useState(false);
-
-  ///
 
   const steps = [
     {
@@ -91,8 +85,6 @@ export default function Create() {
       target: () => ref3.current,
     },
   ];
-
-  ///
 
   const onDrawerClose = () => {
     setDrawerOpen(false);
@@ -171,7 +163,8 @@ export default function Create() {
             <h1 className="animated-text">{siteName}</h1>
             <p className="intro-text">
               Convert words to images with {siteName}'s free AI image generator.
-              Watch your imagination transform into reality using our AI powered image generator for FREE!
+              Watch your imagination transform into reality using our AI powered
+              image generator for FREE!
             </p>
             <form onSubmit={handleImageGenerate} className="prompt-form">
               <input
