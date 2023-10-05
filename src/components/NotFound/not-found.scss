@@ -1,5 +1,5 @@
 .notfound-container{
-  background-color: #FAFAFC;
+  background-color: #fdfdfd;
   height: 100vh;
   padding: 70px 0 0 0 ;
   color: black;
@@ -8,7 +8,8 @@
   align-items: center;
   flex-direction: column;
   img{
-    height: 200px;
+    height: 150px;
+    margin: 10px 0;
   }
   p{
     font-weight: 700;

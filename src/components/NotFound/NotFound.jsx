@@ -7,7 +7,7 @@ export default function NotFound() {
     <div className="notfound-container">
     <h2>404 - Not Found</h2>
       <img
-        src="https://images.vexels.com/media/users/3/253242/isolated/preview/fd4d3f707a4b17a1098bc72a6106340e-sticking-tongue-out-color-stroke.png"
+        src="https://cdn-icons-png.flaticon.com/512/1179/1179235.png"
         alt=""
       />
       <p>
