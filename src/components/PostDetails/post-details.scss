@@ -18,11 +18,15 @@
     justify-content: center;
     align-items: center;
     max-width: 50%;
+    flex: 1;
     img {
       height: 100%;
+      object-fit:contain;
+      width: 100%;
     }
   }
   .details-right {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -38,14 +42,14 @@
       .prompt,
       .seed,
       .neg-prompt,
-      .date{
+      .date {
         background-color: rgba($color: black, $alpha: 0.1);
         padding: 10px;
         border-radius: 10px;
         width: 100% !important;
         display: block;
         overflow-y: auto;
-        cursor:pointer;
+        cursor: pointer;
         color: black;
       }
     }
@@ -53,7 +57,7 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
-      margin: 20px 0 0 0 ;
+      margin: 20px 0 0 0;
       .buttons {
         display: flex;
         gap: 5px;
@@ -80,6 +84,7 @@
     flex-direction: column;
     gap: 20px;
     .details-left {
+      max-width: 100% !important;
       img {
         width: 100%;
         max-width: 400px;
