@@ -30,9 +30,9 @@ export default function Logout() {
       style={{
         width: "100%",
         height: "100vh",
-        color: "grey",
+        color: "lightgrey",
         userSelect: "none",
-        backgroundColor: "black",
+        backgroundColor: "#FAFAFC",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

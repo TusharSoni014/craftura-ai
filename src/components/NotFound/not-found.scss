@@ -2,7 +2,7 @@
   background-color: #FAFAFC;
   height: 100vh;
   padding: 70px 0 0 0 ;
-  color: white;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
   }
   p{
     font-weight: 700;
-    color: rgba($color: #ffffff, $alpha: 0.8);
+    color: rgba($color: black, $alpha: 0.6);
     text-align: center;
     padding: 10px;
   }
