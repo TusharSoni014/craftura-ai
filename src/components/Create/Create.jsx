@@ -4,6 +4,7 @@ import "./create.scss";
 import ImagePreview from "./ImagePreview/ImagePreview";
 import { IoMdSettings } from "react-icons/io";
 import { RiLoader2Fill } from "react-icons/ri";
+import nsfwLogo from "../../assets/nsfw.jpeg";
 import {
   setIsGenerated,
   setIsLoading,
@@ -46,6 +47,7 @@ export default function Create() {
   const multiPosts = useSelector((state) => state.multiPostCreateSlice.posts);
   const inputPromptRef = useRef(null);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+  const [isNsfwModalOpen, setIsNsfwModalOpen] = useState(false);
   const [pageWidth, setPageWidth] = useState(window.innerWidth);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -113,10 +115,37 @@ export default function Create() {
     };
   }, [pageWidth]);
 
+  const wordsArray = [
+    "nsfw",
+    "nude",
+    "naked",
+    "breasts",
+    "pussy",
+    "vagina",
+    "boobs",
+    "sex",
+    "penis",
+    "butt",
+    "ass",
+    "fuck",
+    "fucking",
+    "dick",
+    "cock",
+    "tits",
+    "small girl",
+  ];
+
+  function containsNSFW(prompt, wordsArray) {
+    return wordsArray.some((word) => prompt.includes(word));
+  }
+
   async function handleImageGenerate(e) {
     e.preventDefault();
     if (prompt === "") {
       return toast.info("Type something in the prompt to generate!");
+    } else if (containsNSFW(prompt.toLowerCase(), wordsArray)) {
+      setIsNsfwModalOpen(true)
+      return toast.warn("Your prompt contains NSFW characters!");
     }
     try {
       if (isLoggedIn) {
@@ -228,6 +257,25 @@ export default function Create() {
           setIsSettingsModalOpen={setIsSettingsModalOpen}
           handleImageGenerate={(e) => handleImageGenerate(e)}
         />
+      </Modal>
+      <Modal
+        centered={true}
+        title="NSFW Mode !"
+        open={isNsfwModalOpen}
+        className="nsfw-modal"
+        onCancel={() => setIsNsfwModalOpen(false)}
+        footer={false}
+      >
+        <div className="nsfw-modal-container">
+          <div className="logo-container">
+            <img src={nsfwLogo} alt="nsfw logo" />
+          </div>
+          <div className="info">
+            Your prompt contain NSFW words, if you want to try our new NSFW Image creation tool, then visit <Link  target="_blank" to="https://www.sexyprompt.xyz/">
+              <Button style={{margin:"10px 0 0 0"}} type="primary" block>Sexy Prompt</Button>
+            </Link>
+          </div>
+        </div>
       </Modal>
       <Drawer
         title="Created Posts"
