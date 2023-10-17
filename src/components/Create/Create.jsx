@@ -118,6 +118,9 @@ export default function Create() {
   const wordsArray = [
     "nsfw",
     "nude",
+    "kissing",
+    "kissed",
+    "kiss",
     "naked",
     "breasts",
     "pussy",
@@ -136,15 +139,22 @@ export default function Create() {
   ];
 
   function containsNSFW(prompt, wordsArray) {
-    return wordsArray.some((word) => prompt.includes(word));
+    const lowerCasePrompt = prompt.toLowerCase();
+    const regexPattern = new RegExp(
+      `(\\b(?:${wordsArray.join("|")})\\b)|[({[\\s]*(\\b(?:${wordsArray.join(
+        "|"
+      )})\\b)[\\s]*[})\\]]`,
+      "i"
+    );
+    return regexPattern.test(lowerCasePrompt);
   }
 
   async function handleImageGenerate(e) {
     e.preventDefault();
     if (prompt === "") {
       return toast.info("Type something in the prompt to generate!");
-    } else if (containsNSFW(prompt.toLowerCase(), wordsArray)) {
-      setIsNsfwModalOpen(true)
+    } else if (containsNSFW(prompt, wordsArray)) {
+      setIsNsfwModalOpen(true);
       return toast.warn("Your prompt contains NSFW characters!");
     }
     try {
@@ -271,8 +281,12 @@ export default function Create() {
             <img src={nsfwLogo} alt="nsfw logo" />
           </div>
           <div className="info">
-            Your prompt contain NSFW words, if you want to try our new NSFW Image creation tool, then visit <Link  target="_blank" to="https://www.sexyprompt.xyz/">
-              <Button style={{margin:"10px 0 0 0"}} type="primary" block>Sexy Prompt</Button>
+            Your prompt contain NSFW words, if you want to try our new NSFW
+            Image creation tool, then visit{" "}
+            <Link target="_blank" to="https://www.sexyprompt.xyz/">
+              <Button style={{ margin: "10px 0 0 0" }} type="primary" block>
+                Sexy Prompt
+              </Button>
             </Link>
           </div>
         </div>
