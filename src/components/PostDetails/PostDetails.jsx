@@ -62,7 +62,7 @@ export default function PostDetails({ cloneBtn }) {
               </div>
             </div>
             <div className="detail-item">
-              <small>negPrompt:</small>
+              <small>Negative Prompt:</small>
               <div
                 onClick={(e) => copyInnerText(e.target)}
                 className="neg-prompt"

@@ -136,6 +136,7 @@ export default function Create() {
     "cock",
     "tits",
     "small girl",
+    "sexy"
   ];
 
   function containsNSFW(prompt, wordsArray) {
