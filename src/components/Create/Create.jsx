@@ -136,7 +136,16 @@ export default function Create() {
     "cock",
     "tits",
     "small girl",
-    "sexy"
+    "sexy",
+    "bikini",
+    "full body",
+    "thong",
+    "bottomless",
+    "teen girl",
+    "thongs",
+    "teenage",
+    "high cut",
+    "no clothes"
   ];
 
   function containsNSFW(prompt, wordsArray) {
