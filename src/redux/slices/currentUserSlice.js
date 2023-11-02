@@ -35,16 +35,12 @@ const currentUserSlice = createSlice({
     posts: [],
     myPostsLoading: false,
     myPostscount: null,
-    editMode: false,
     postError: null,
     isLoadMoreBtn: true,
   },
   reducers: {
-    emptyCurrentPosts: (state, action) => {
+    emptyCurrentPosts: (state) => {
       state.posts = [];
-    },
-    updateEditMode: (state, action) => {
-      state.editMode = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -81,5 +77,5 @@ const currentUserSlice = createSlice({
   },
 });
 
-export const { emptyCurrentPosts, updateEditMode } = currentUserSlice.actions;
+export const { emptyCurrentPosts } = currentUserSlice.actions;
 export default currentUserSlice.reducer;

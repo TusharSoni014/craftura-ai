@@ -5,9 +5,8 @@ import { useNavigate } from "react-router-dom";
 import {
   fetchMyPosts,
   fetchMyPostsCount,
-  updateEditMode,
 } from "../../redux/slices/currentUserSlice";
-import { Button, Switch } from "antd";
+import { Button} from "antd";
 import PostItem from "./PostItem/PostItem";
 import Footer from "../Footer/Footer";
 
@@ -22,14 +21,9 @@ export default function MyProfile() {
   );
   const [page, setPage] = useState(1);
 
-  const handleEditMode = (value) => {
-    dispatch(updateEditMode(value));
-  };
-
   const myPostsLoading = useSelector(
     (state) => state.currentUserSlice.myPostsLoading
   );
-  const editMode = useSelector((state) => state.currentUserSlice.editMode);
   const myPostscount = useSelector(
     (state) => state.currentUserSlice.myPostscount
   );
@@ -68,16 +62,6 @@ export default function MyProfile() {
           <div className="profile-right">
             <div className="username">@{user.username}</div>
             <div className="posts-count">Total Posts: {myPostscount}</div>
-            {myPostscount !== 0 && (
-              <div className="edit-mode-container">
-                <p>Edit Mode:</p>
-                <Switch
-                  defaultChecked={editMode}
-                  className="edit-mode-switch-toggle"
-                  onChange={handleEditMode}
-                />
-              </div>
-            )}
           </div>
         </div>
         <div className="profile-posts-container">
@@ -111,7 +95,7 @@ export default function MyProfile() {
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

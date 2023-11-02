@@ -144,8 +144,10 @@ export default function Create() {
     "teen girl",
     "thongs",
     "teenage",
+    "teen",
     "high cut",
-    "no clothes"
+    "no clothes",
+    "cleavage"
   ];
 
   function containsNSFW(prompt, wordsArray) {
