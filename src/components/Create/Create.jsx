@@ -115,59 +115,10 @@ export default function Create() {
     };
   }, [pageWidth]);
 
-  const wordsArray = [
-    "nsfw",
-    "nude",
-    "kissing",
-    "kissed",
-    "kiss",
-    "naked",
-    "breasts",
-    "pussy",
-    "vagina",
-    "boobs",
-    "sex",
-    "penis",
-    "butt",
-    "ass",
-    "fuck",
-    "fucking",
-    "dick",
-    "cock",
-    "tits",
-    "small girl",
-    "sexy",
-    "bikini",
-    "full body",
-    "thong",
-    "bottomless",
-    "teen girl",
-    "thongs",
-    "teenage",
-    "teen",
-    "high cut",
-    "no clothes",
-    "cleavage"
-  ];
-
-  function containsNSFW(prompt, wordsArray) {
-    const lowerCasePrompt = prompt.toLowerCase();
-    const regexPattern = new RegExp(
-      `(\\b(?:${wordsArray.join("|")})\\b)|[({[\\s]*(\\b(?:${wordsArray.join(
-        "|"
-      )})\\b)[\\s]*[})\\]]`,
-      "i"
-    );
-    return regexPattern.test(lowerCasePrompt);
-  }
-
   async function handleImageGenerate(e) {
     e.preventDefault();
     if (prompt === "") {
       return toast.info("Type something in the prompt to generate!");
-    } else if (containsNSFW(prompt, wordsArray)) {
-      setIsNsfwModalOpen(true);
-      return toast.warn("Your prompt contains NSFW characters!");
     }
     try {
       if (isLoggedIn) {
@@ -196,6 +147,9 @@ export default function Create() {
       errorMessageHandler(error);
       if (error.status === 401) {
         dispatch(toggleSignonModalOpen());
+      }
+      if (error.status === 403) {
+        dispatch(setIsNsfwModalOpen(true));
       }
     } finally {
       dispatch(setIsLoading(false));
