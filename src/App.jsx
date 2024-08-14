@@ -17,6 +17,11 @@ import GoogleButton from "react-google-button";
 
 function App() {
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+    window.location = "https://www.craftura.art";
+  },[])
+
   const postDetailOpenState = useSelector(
     (state) => state.postDetailsSlice.postDetailOpenState
   );
